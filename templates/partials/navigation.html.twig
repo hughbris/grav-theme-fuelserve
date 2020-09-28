@@ -1,0 +1,84 @@
+{% macro loop(page) %}
+	{% for p in page.children.visible %}
+		{% set is_active = (p.active or p.activeChild) %}
+		{% if p.children.visible.count > 0 %}
+			<li>
+				<a href="{{ p.url }}" class="dropdown-toggle hvr-bounce-to-bottom{{ is_active ? ' active' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					{% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+					{{ p.menu }}
+				</a>
+				<ul class="dropdown-menu">
+					{{ _self.loop(p) }}
+				</ul>
+			</li>
+		{% else %}
+			<li>
+				<a href="{{ p.url }}"{{ is_active ? ' class="active"' }}>
+					{% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+					{{ p.menu }}
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+{% endmacro %}
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu						
+		</button>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li class="home-icon"><a href="{{ home_url }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+
+			{% if theme_config.dropdown.enabled %}
+				{{ _self.loop(pages) }}
+			{% else %}
+				{% for page in pages.children.visible %}
+					{% set is_active = (page.active or page.activeChild) %}
+					<li>
+						<a href="{{ page.url }}"{{ is_active ? ' class="active"' }}>
+							{% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+							{{ page.menu }}
+						</a>
+					</li>
+				{% endfor %}
+			{% endif %}
+			{% for mitem in site.menu %}
+				{% set is_active = (page.active or page.activeChild) %}
+				<li>
+					<a href="{{ mitem.url }}"{{ is_active ? ' class="active"' }}>
+						{% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
+						{{ mitem.text }}
+					</a>
+				</li>
+			{% endfor %}
+			{# TODO: login section if login plugin enabled: #}
+			<li class="login w3">
+				<div id="loginContainer"><a id="loginButton"><span>Login</span></a>
+					<div id="loginBox" style="display: none;">      
+						<form id="loginForm" action="#" method="post">
+							<fieldset id="body">
+								<fieldset>
+									<label for="email">Email Address</label>
+									<input type="text" name="email" id="email" required="">
+								</fieldset>
+								<fieldset>
+									<label for="password">Password</label>
+									<input type="password" name="password" id="password" required="">
+								</fieldset>
+								<input type="submit" id="login" value="Sign in">
+								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+							</fieldset>
+							<span><a href="#">Forgot your password?</a></span>
+						</form>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="clearfix"> </div>
+	</div>
+</nav>
+

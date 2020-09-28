@@ -1,0 +1,12 @@
+title: Fuel Serve
+author:
+  name: Fuel Serve
+  email: 'fuelserve@example.com'
+metadata:
+    description: 'In a voice of pure fuel'
+
+globals:
+  contacts:
+    email: info@example.com
+    phone: '(+1) 000 123 456789'
+    address: 'Eiusmod Tempor inc ,St Dolore Place,Kingsport 56777' # optional in template

@@ -1,0 +1,32 @@
+name: Fuelserve
+slug: fuelserve
+type: theme
+version: 0.1.0
+description: Adaptation of w3layouts' fuelserve
+icon: rebel
+author:
+  name: Hugh Barnes
+  email: dev@hubns.com
+homepage: https://github.com/hughbris/grav-theme-fuelserve
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/hughbris/grav-theme-fuelserve/issues
+readme: https://github.com/hughbris/grav-theme-fuelserve/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

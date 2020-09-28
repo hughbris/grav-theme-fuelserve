@@ -1,0 +1,35 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+	{% block banner %}
+		{% include 'partials/banner.html.twig' ignore missing %}
+	{% endblock banner %}
+	
+	{% block content %}
+		<!-- welcome -->
+		<div class="welcome">
+			<!-- container -->
+			<div class="container">
+				<div class="welcome-info">
+					{{ page.content }}
+				</div>
+			</div>
+			<!-- //container -->
+		</div>
+		<!-- //welcome -->
+		<!-- 728x90 -->
+	{% endblock content %}
+
+	{% block slider %}
+		{% include 'partials/slider.html.twig' ignore missing %}
+	{% endblock slider %}
+
+	{% block newsfeed %}
+		{% include 'partials/newsfeed.html.twig' ignore missing %}
+	{% endblock newsfeed %}
+
+	{% block closer %}
+		{% include 'partials/closer.html.twig' ignore missing %}
+	{% endblock closer %}
+
+{% endblock %}

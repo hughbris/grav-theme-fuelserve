@@ -1,0 +1,119 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head %}
+
+{% block stylesheets %}
+	<!-- Custom Theme files --> {# these comments don't actually appear where they should in the rendered source, yet seem useful here #}
+    {% do assets.addCss('theme://css/bootstrap.css', 100) %}
+    {% do assets.addCss('theme://css/style.css', 100) %}
+    {% do assets.addCss('theme://css/font-awesome.css', 100) %} <!-- font-awesome icons -->
+	<!-- //Custom Theme files -->
+
+    {% do assets.addCss('theme://css/custom.css', 98) %}
+{% endblock %}
+
+{% include 'partials/head-fonts.html.twig' ignore missing %}
+
+{% block javascripts %}
+	<!-- js -->
+    {% do assets.addJs('theme://js/jquery-1.11.1.min.js', 100) %}
+    {% do assets.addJs('theme://js/bootstrap.js', 100) %}
+	{% set inline_js %}
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+	{% endset %}
+    {% do assets.addInlineJs(inline_js, 100) %}  <!-- pop-up -->	
+    {% do assets.addJs('theme://js/menu_jquery.js', 100) %}  <!-- pop-up -->	
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+{% block header %}
+
+	{% block header_strip %}
+	<!-- header-top -->
+	<div class="header-top">
+		<!-- container -->
+		<div class="container">
+			<div class="social w3-agileitsicons">
+				{% include 'partials/social.html.twig' %}
+			</div>
+			{% include 'partials/contacts.html.twig' %}
+			<div class="clearfix"> </div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //header-top -->
+	{% endblock header_strip %}
+
+	<!-- header -->
+	<div class="header">
+		<!-- container -->
+		<div class="container">
+
+			{% block header_title %}
+				{% include 'partials/header.html.twig' %}
+			{% endblock %}
+
+            {% block header_navigation %}
+            <div class="top-nav">
+                {% include 'partials/navigation.html.twig' %}
+            </div>
+            {% endblock %}
+
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //header -->
+
+{% endblock header %}
+
+{% block body %}
+
+	{% block content %}
+		{{ page.content }}{# FIXME? #}
+	{% endblock content %}
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
+
+{% block trough %}
+    {% include 'partials/trough.html.twig' %}
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

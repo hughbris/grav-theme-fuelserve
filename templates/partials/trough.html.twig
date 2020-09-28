@@ -1,0 +1,20 @@
+<!-- smooth-scrolling-of-move-up --> 
+{% do assets.addJs('theme://js/move-top.js', {'group': 'bottom'}) %}
+{% do assets.addJs('theme://js/easing.js', {'group': 'bottom'}) %}
+{% set inline_js %}
+	$(document).ready(function() {
+		/*
+		var defaults = {
+			containerID: 'toTop', // fading element id
+			containerHoverID: 'toTopHover', // fading element hover id
+			scrollSpeed: 1200,
+			easingType: 'linear' 
+		};
+		*/
+		
+		$().UItoTop({ easingType: 'easeOutQuart' });
+		
+	});
+{% endset %}
+{% do assets.addInlineJs(inline_js, {'group': 'bottom'}) %}
+<!-- //smooth-scrolling-of-move-up -->

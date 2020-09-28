@@ -1,0 +1,46 @@
+<!-- slider -->
+<div class="slider">
+	<div class="arrival-grids wthree-grids">			 
+		<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner">
+			<ul id="flexiselDemo1">
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s1.jpg') }}" alt=""></a></li>
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s2.jpg') }}" alt=""></a></li>
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s3.jpg') }}" alt=""></a></li>
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s4.jpg') }}" alt=""></a></li>
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s1.jpg') }}" alt=""></a></li>
+				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s2.jpg') }}" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+
+	{% set inline_js %}
+		$(window).load(function() {			
+		$("#flexiselDemo1").flexisel({
+		visibleItems: 4,
+		animationSpeed: 1000,
+		autoPlay: true,
+		autoPlaySpeed: 3000,    		
+		pauseOnHover:true,
+		enableResponsiveBreakpoints: true,
+		responsiveBreakpoints: { 
+			portrait: { 
+				changePoint:480,
+				visibleItems: 1
+			}, 
+			landscape: { 
+				changePoint:640,
+				visibleItems: 2
+			},
+			tablet: { 
+				changePoint:768,
+				visibleItems: 3
+			}
+		}
+	});
+	});
+	{% endset %}
+	{% do assets.addInlineJs(inline_js, 98) %}
+	{% do assets.addJs('theme://js/jquery.flexisel.js', 98) %}
+</div>
+<!-- //slider -->
+<!-- 728x90 -->
