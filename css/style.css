@@ -1059,7 +1059,7 @@ ul#flexiselDemo1 li a h4:hover{
     font-size: 1em;
     color: #10c7bf;
     margin: 1em 0 1em 0;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */ /* removed: silly idea, fraught! */
     font-weight: 600;
 }
 .team-grid p {

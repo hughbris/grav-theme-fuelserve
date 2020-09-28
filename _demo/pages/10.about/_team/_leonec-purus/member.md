@@ -1,5 +1,5 @@
 ---
-title: leonec purus
+title: Leonec Purus
 social:
     linkedin: loe
     twitter: pur

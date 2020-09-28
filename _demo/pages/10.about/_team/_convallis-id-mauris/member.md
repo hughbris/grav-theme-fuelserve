@@ -1,5 +1,5 @@
 ---
-title: convallis id mauris
+title: Convallis Id Mauris
 social:
     linkedin: foo
     twitter: bar

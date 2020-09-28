@@ -1,5 +1,5 @@
 ---
-title: massa convallis
+title: Massa Convallis
 social:
     linkedin: mas
     twitter: sa
