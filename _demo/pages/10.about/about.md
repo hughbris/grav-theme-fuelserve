@@ -1,6 +1,13 @@
 ---
 title: About us
 menu: About
+content:
+    items: '@self.modular'
+    order:
+        by: default
+        dir: asc
+        custom:
+            - _team
 ---
 
 ##### Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.

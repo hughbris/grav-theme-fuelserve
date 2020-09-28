@@ -1,0 +1,21 @@
+<div class="col-md-3 team-grid">
+	{% set mug = page.media|first %}
+	<img src="{{ mug.url }}" alt="{{ page.title }}">
+	<h6>{{ page.title }}</h6>
+	<div class="team-w3icons w3-agileitsicons">
+		{% if header.social %}
+		{% set network_urls = {
+			'twitter': 'https://twitter.com/u/',	
+			'linkedin': 'https://linkedin.com/u/',
+			'facebook': 'https://facebook.com/u/',
+		} %} {# FIXME: these URL values won't fly #}
+		<ul>
+			{% for network, account in header.social %}
+				{{ dump(network, account) }}
+				<li><a href="{{ network_urls[network] }}{{ account }}"><i class="fa fa-{{ network }}" aria-hidden="true"></i></a></li>
+			{% endfor %}
+		</ul>  
+		{% endif %}
+	</div>
+	{{ page.content() }}
+</div>

@@ -32,6 +32,11 @@
 			</div>
 			<!-- about-bottom -->
 			<!-- 728x90 -->
+			{% for m in page.collection %}
+				{{ m.content() }}
+			{% endfor %}
+	<!-- about-bottom -->
+		<!-- 728x90 -->
 		</div>
 	{% endblock content %}
 

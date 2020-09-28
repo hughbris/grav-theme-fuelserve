@@ -1,0 +1,16 @@
+<!-- about-team -->
+<div class="about-team agileits-w3layouts">
+	<!-- container-wrap -->
+	<div class="container">
+		<h3>{{ page.title }}</h3>
+		<div class="team-wthreegrids">
+			{% for m in page.collection('members') %}
+				{{ m.content() }}
+			{% endfor %}
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //container -->
+
+
+</div>
