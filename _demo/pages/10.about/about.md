@@ -8,6 +8,7 @@ content:
         dir: asc
         custom:
             - _team
+            - _advantages
 ---
 
 ##### Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.

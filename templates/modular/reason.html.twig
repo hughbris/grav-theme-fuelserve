@@ -1,0 +1,7 @@
+<div class="col-md-4 choose-grid">
+    <h5>{{ page.title }}</h5>
+    {{ page.content() }}
+    <div class="choose-button">
+        <a href="{{ page.header.cta.target }}">{{ page.header.cta.text|default('More') }}</a>
+    </div>
+</div>
