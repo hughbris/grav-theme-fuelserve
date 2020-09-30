@@ -4,12 +4,10 @@ process:
   twig: true
 cache_enable: false
 
-forms:
+forms: # TODO: test submitting the form
   contact:
-    title: Contact form # TODO: capitalise in Twig
-    # action: 
+    title: Contact form
     method: POST
-    # classes: 'contact-form agileits-w3layouts'
 
     fields:
       cols:
