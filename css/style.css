@@ -1717,7 +1717,24 @@ h2.typoh2{
     font-size: 0.9em;
     color: #777;
     line-height: 1.8em;
-} 
+}
+/* this is changed, cleaned up and requires custom.css for widths (based on columns class) */
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"] {
+	display: inline-block;
+	background: none;
+	border: 1.5px solid #CBCBCB;
+	outline: none;
+	padding: 10px 15px;
+	font-size: .9em;
+	font-weight: 400;
+	color: #777;
+    margin: 0;
+    margin-bottom: 1.5em;
+}
+/* this unholy crap is what the above rule replaces, left in in case you want to restore the smoke and mirrors original */
+/*
 .contact-form input[type="text"] {
 	display: inline-block;
 	background: none;
@@ -1742,6 +1759,7 @@ h2.typoh2{
 	color: #777;
 	margin: 0 1.25em;
 }
+*/
 .contact-form textarea {
 	background: none;
 	border: 1.5px solid #CBCBCB;

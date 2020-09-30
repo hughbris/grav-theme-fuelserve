@@ -1,0 +1,34 @@
+.form-column, .form-column div {
+    display: inline;
+}
+
+.contact-form .form-columns.thirds input {
+    width: 32%;
+}
+
+.contact-form .form-columns.thirds input {
+    margin-left: 0.625em; margin-right: 0.625em;
+}
+
+.contact-form .form-columns.thirds .form-column:first-child input[type="text"],
+.contact-form .form-columns.thirds .form-column:first-child input[type="tel"],
+.contact-form .form-columns.thirds .form-column:first-child input[type="email"] {
+    margin-left: 0; margin-right: 0.625em;
+}
+
+.contact-form .form-columns.thirds .form-column:last-child input[type="text"],
+.contact-form .form-columns.thirds .form-column:last-child input[type="tel"],
+.contact-form .form-columns.thirds .form-column:last-child input[type="email"] {
+    margin-left: 0.625em; margin-right: 0;
+}
+
+.contact-form .form-columns.thirds .form-column:first-child input[type="text"],
+.contact-form .form-columns.thirds .form-column:last-child input[type="text"],
+.contact-form .form-columns.thirds .form-column:first-child input[type="tel"],
+.contact-form .form-columns.thirds .form-column:last-child input[type="tel"],
+.contact-form .form-columns.thirds .form-column:first-child input[type="email"],
+.contact-form .form-columns.thirds .form-column:last-child input[type="email"] {
+    width: 31.9%;
+}
+
+

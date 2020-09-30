@@ -1,0 +1,54 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+	
+	{% block content %}
+	<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<div class="contact-agileinfo">
+				<h2 class="agileits-title">{{ page.title }}</h2>
+				<!-- 728x90 -->
+
+			</div> 
+			<div class="agile-address">
+				<div class="col-md-4 address-grids">
+				{% set address = site.globals.contacts.address %}
+				{% if address is not empty %}
+					<h4>Address :</h4>
+					<ul>
+						<li><p>{{ address|split(',')|map(a => a|trim())|join('<br>') }}</p>
+						</li>
+					</ul>
+				{% endif %}
+				</div>
+				<div class="col-md-4 address-grids agileits">
+				{% set phones = site.globals.contacts.phone|default(['(+1) 000 123 456789']) %}
+				<h4>Phone :</h4>
+				{% for phone in phones %}
+					<p><a class="tel" href="tel:{{ phone|regex_replace(['~[\\s()-]~'], ['']) }}">{{ phone }}</a></p>
+				{% endfor %} <!-- added tel hyperlink to phone number -->
+				</div>
+				<div class="col-md-4 address-grids">
+					<h4>Email :</h4>
+					<p><a href="mailto:{{ site.globals.contacts.email }}">{{ site.globals.contacts.email }}</a></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- 728x90 -->
+			<div class="contact-agileinfom">
+				{{ page.content }}
+			</div>
+			<!-- 728x90 -->
+			{% set contact_form = forms('contact')|default(forms(0)) %}
+			<div class="contact-form agileits-w3layouts">
+				<h4>{{ contact_form.title|titleize }}</h4>
+				{% include "forms/form.html.twig" with {form: contact_form} %}
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+	{% endblock content %}
+
+
+{% endblock %}

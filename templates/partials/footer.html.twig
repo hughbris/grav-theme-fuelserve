@@ -17,7 +17,7 @@
 				    {% include 'partials/social.html.twig' %}
                 </div>
 				<div class="f-address">
-                    {% set phone = site.globals.contacts.phone|default('+1 234 567 8901') %}
+                    {% set phone = site.globals.contacts.phone|first|default('+1 234 567 8901') %}
                     {% set address = site.globals.contacts.address %}
                     {% if address is not empty %}
 					    <p class="text">{{ address }}</p>

@@ -8,5 +8,7 @@ metadata:
 globals:
   contacts:
     email: info@example.com
-    phone: '(+1) 000 123 456789'
+    phone:
+      - '(+1) 000 123 456789'
+      - '+2 987 654 321'
     address: 'Eiusmod Tempor inc ,St Dolore Place,Kingsport 56777' # optional in template
