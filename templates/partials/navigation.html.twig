@@ -55,28 +55,7 @@
 					</a>
 				</li>
 			{% endfor %}
-			{# TODO: login section if login plugin enabled: #}
-			<li class="login w3">
-				<div id="loginContainer"><a id="loginButton"><span>Login</span></a>
-					<div id="loginBox" style="display: none;">      
-						<form id="loginForm" action="#" method="post">
-							<fieldset id="body">
-								<fieldset>
-									<label for="email">Email Address</label>
-									<input type="text" name="email" id="email" required="">
-								</fieldset>
-								<fieldset>
-									<label for="password">Password</label>
-									<input type="password" name="password" id="password" required="">
-								</fieldset>
-								<input type="submit" id="login" value="Sign in">
-								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-							</fieldset>
-							<span><a href="#">Forgot your password?</a></span>
-						</form>
-					</div>
-				</div>
-			</li>
+			{% include 'partials/navigation-login.html.twig' ignore missing %}
 		</ul>
 		<div class="clearfix"> </div>
 	</div>

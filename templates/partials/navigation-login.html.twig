@@ -1,0 +1,33 @@
+{# TODO: WIP just shows login in menu and a popup login form that is not yet hooked into a login action; also (snippet at bottom) can show login status and logout link when user is authenticated #}
+{# WIP because I don't need this yet #}
+{% if config.plugins.login and config.plugins.login.enabled %}
+<li class="login w3">
+	<div id="loginContainer"><a id="loginButton"><span>Login</span></a>
+		<div id="loginBox"> {# removed redundant inline style #}
+			<form id="loginForm" action="#" method="post"> {# TODO: hook this up; make it work #}
+				<fieldset id="body">
+					<fieldset>
+						<label for="email">Email Address</label>
+						<input type="text" name="email" id="email" required="">
+					</fieldset>
+					<fieldset>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" required="">
+					</fieldset>
+					<input type="submit" id="login" value="Sign in">
+					<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+				</fieldset>
+				<span><a href="#">Forgot your password?</a></span> {# TODO: make this work #}
+			</form>
+		</div>
+	</div>
+</li>
+{% endif %}
+{# TODO: implement login status and logout link similar to below #}
+{#
+<span class="login-status">
+	{% if grav.user.authenticated %}
+		<strong>{{ grav.user.fullname ?: grav.user.username }}</strong>, <a class="logout" href="{{ url(uri.addNonce((uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce'))|e }}">{{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}</a>
+	{% endif %}
+</span>
+#}

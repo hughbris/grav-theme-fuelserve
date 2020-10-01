@@ -291,7 +291,9 @@ ul.dropdown-menu {
     border-radius: 6px 0 6px 6px;
 }
 .top-nav ul li.login {
-    margin-left: 33% !important;
+	/* margin-left: 33% !important; */ /* fixed this: no smoke and mirrors */
+	float: right;
+	padding: 1.4em; /* this mostly emulates .top-nav ul li a (which is 1.5) */
 }
 /*--Login --*/
 #loginContainer {
@@ -2039,7 +2041,7 @@ button.btn1.btn-1.btn-1b:hover {
 /*-- responsive-start-here --*/
 @media (max-width:1080px){
 	.top-nav ul li.login {
-		margin-left: 20% !important;
+		/* margin-left: 0% !important; */ /* removed this: no smoke and mirrors */
 	}
 	.date {
 		width: 90px;
@@ -2063,7 +2065,7 @@ button.btn1.btn-1.btn-1b:hover {
 		width: 93.5%;
 	}
 	.top-nav ul li.login {
-		margin-left: 17% !important;
+		/* margin-left: 0% !important; */ /* removed this: no smoke and mirrors */
 	}
 	.welcome-info {
 		width: 65%;
@@ -2080,7 +2082,7 @@ button.btn1.btn-1.btn-1b:hover {
 		padding: 1.5em .7em;
 	}
 	.top-nav ul li.login {
-		margin-left: 16% !important;
+		/* margin-left: 0% !important; */ /* removed this: no smoke and mirrors */
 	}
 	.header-top-right { 
 		width: 30%;
@@ -2271,7 +2273,9 @@ button.btn1.btn-1.btn-1b:hover {
 	    padding: 0 !important;
 	}
 	.top-nav ul li.login {
-		margin-left: 0% !important;
+		/* margin-left: 0% !important; */ /* removed this: no smoke and mirrors */
+		float: none; /* added this: no smoke and mirrors please */
+		padding: 0; /* added: unsets the explicit padding we applied in full screen menu */
 	}
 	#loginForm:after {
 		right: 48%;
