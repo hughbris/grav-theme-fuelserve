@@ -13,7 +13,7 @@
 				<h2 class="agileits-title">{{ page.title }}</h2>
 				<!-- 728x90 -->
 			</div>
-			<div class="gallery-w3agileits-row">
+			<div class="gallery-w3agileits-row"> <!-- added: image alt and caption taken from media metafiles where specified -->
 				{% for image in page.media.images|ksort %} 
 					{% set new_row = loop.index0 % 4 == 0 %}
 					{% set last_row = loop.index0 % 4 == 3 %}
@@ -21,7 +21,7 @@
 						<div class="gallery-w3grids">
 					{% endif %}
 							<div class="col-md-3 gallery-wthreegrid">
-								<a class="example-image-link" href="{{ image.url }}" data-lightbox="example-set" data-title=""><img class="example-image" src="{{ image.url }}" alt=""/></a>
+								<a class="example-image-link" href="{{ image.url }}" data-lightbox="example-set" data-title="{{ image.meta.caption }}"><img class="example-image" src="{{ image.url }}" alt="{{ image.meta.alt_text }}"/></a>
 							</div>
 					{% if last_row %}
 							<div class="clearfix"> </div>
