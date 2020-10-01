@@ -1,0 +1,44 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+	{% do assets.addCss('theme://css/lightbox.css', 100) %}
+	{% do assets.addJs('theme://js/lightbox-plus-jquery.min.js', {'group':'lightbox'}) %}
+
+	{% block content %}
+	<!-- gallery -->
+	<div class="gallery-top">
+		<!-- container -->
+		<div class="container">
+			<div class="gallery-agileinfo">
+				<h2 class="agileits-title">{{ page.title }}</h2>
+				<!-- 728x90 -->
+			</div>
+			<div class="gallery-w3agileits-row">
+				{% for image in page.media.images|ksort %} 
+					{% set new_row = loop.index0 % 4 == 0 %}
+					{% set last_row = loop.index0 % 4 == 3 %}
+					{% if new_row %}
+						<div class="gallery-w3grids">
+					{% endif %}
+							<div class="col-md-3 gallery-wthreegrid">
+								<a class="example-image-link" href="{{ image.url }}" data-lightbox="example-set" data-title=""><img class="example-image" src="{{ image.url }}" alt=""/></a>
+							</div>
+					{% if last_row %}
+							<div class="clearfix"> </div>
+						</div>
+						<!-- 728x90 -->
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //gallery -->
+	{% endblock content %}
+
+{% endblock %}
+
+{% block bottom %}
+	{{ assets.js('lightbox')|raw }}
+    {{ parent() }}
+{% endblock %}

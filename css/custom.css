@@ -31,4 +31,12 @@
     width: 31.9%;
 }
 
-
+.gallery-w3agileits-row .gallery-w3grids {
+    margin: 2em 0;
+}
+.gallery-w3agileits-row .gallery-w3grids:first-child {
+    margin-top: 0;
+}
+.gallery-w3agileits-row .gallery-w3grids:last-child {
+    margin-bottom: 0;
+}
