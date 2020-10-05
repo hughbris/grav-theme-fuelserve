@@ -25,6 +25,9 @@
 				<div class="col-md-4 address-grids agileits">
 				{% set phones = site.globals.contacts.phone|default(['(+1) 000 123 456789']) %}
 				<h4>Phone :</h4>
+				{% if phones is not iterable %}
+					{% set phones = [phones] %}
+				{% endif %}
 				{% for phone in phones %}
 					<p><a class="tel" href="tel:{{ phone|regex_replace(['~[\\s()-]~'], ['']) }}">{{ phone }}</a></p>
 				{% endfor %} <!-- added tel hyperlink to phone number -->
