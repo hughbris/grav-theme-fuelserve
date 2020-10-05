@@ -1,1 +1,35 @@
 {% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <!-- default -->
+    <div class="content">
+        <div class="aboutw3-agileinfo">
+            <!-- container -->
+            <div class="container">
+                <h2 class="agileits-title">{{ page.title }}</h2>
+                <!-- 728x90 -->
+            </div>
+            <!-- //container -->
+        </div>
+        <!-- about-bottom -->
+        <div class="about-bottom">
+            <!-- container -->
+            <div class="container">
+                <div class="about-agileinfo">
+                    <div class="col-md-12 about-w3grid">
+                        {{ page.content }}
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <!-- // container -->
+        </div>
+        <!-- default-bottom -->
+        <!-- 728x90 -->
+        {% for m in page.collection %}
+            {{ m.content() }}
+        {% endfor %}
+
+    </div>
+    <!-- //default -->
+{% endblock content %}
