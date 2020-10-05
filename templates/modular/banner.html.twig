@@ -1,0 +1,39 @@
+<!-- banner -->
+<div class="banner">
+	<!-- container -->
+	<div class="container">
+		<div class="banner-agileinfo">
+			{% do assets.addJs('theme://js/responsiveslides.min.js', 99) %}
+			{% set inline_js %}
+				// You can also use "$(window).load(function() {"
+				$(function () {
+				// Slideshow 4
+					$("#slider3").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						before: function () {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+						}
+						});
+				});
+			{% endset %}
+			{% do assets.addInlineJs(inline_js, 99) %}
+			<div id="top" class="callbacks_container-wrap">
+				<ul class="rslides" id="slider3">
+				{% for m in page.collection('brags') %}
+					{{ m.content() }}
+				{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //container -->
+</div>
+<!-- //banner -->
+<!-- 728x90 -->

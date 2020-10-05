@@ -1,0 +1,14 @@
+<li>
+    <div class="banner-w3text">
+        <h3>{{ page.title }}</h3>
+        <h5>{{ header.bragline }}</h5>
+        {{ page.content() }}
+        {% if header.cta %}
+        <div class="banner-buttons">
+            <div class="banner-button">
+                <a href="{{ header.cta.target }}">{{ header.cta.text|default('More') }}</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</li>

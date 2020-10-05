@@ -2,7 +2,10 @@
 
 {% block body %}
 	{% block banner %}
-		{% include 'partials/banner.html.twig' ignore missing %}
+		{% set banner = page.find('/home/_banner') %}
+		{% if banner %}
+			{{ banner.content() }}
+		{% endif %}
 	{% endblock banner %}
 	
 	{% block content %}
