@@ -1,7 +1,11 @@
 <div class="w3layouts-details">
 	<ul>
 		{% set email = site.globals.contacts.email|default('info@example.com') %}
-		{% set phone = site.globals.contacts.phone|first|default('(+1) 000 123 456789') %}
+		{% set phones = site.globals.contacts.phone %}
+		{% if phones is iterable %}
+			{% set phones = phones|first %}
+		{% endif %}
+		{% set phone = phones|default('(+1) 000 123 456789') %}
 		<li><a href="{{ email }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ email }}</a></li>
 		<li><a href="tel:{{ phone|regex_replace(['~[\\s()-]~'], ['']) }}" class="tel"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>{{ phone }}</a></li><!-- added hyperlink to telephone here -->
 	</ul>
