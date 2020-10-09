@@ -1,3 +1,16 @@
 enabled: true
 dropdown:
   enabled: true
+
+social_networks: # FIXME: these aren't correct
+  twitter:
+    prepend: https://twitter.com/u/
+    class: twt
+  linkedin:
+    prepend: https://www.linkedin.com/in/ # checked, correct
+    class: drbl # yup, this is what the source theme has
+  facebook:
+    prepend: https://facebook.com/u/
+  dribbble:
+    prepend: dribbleFIXME
+    class: be # yeah that's also weird

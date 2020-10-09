@@ -1,6 +1,10 @@
-<ul>
-	<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-	<li><a class="twt" href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-	<li><a class="drbl" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
-	<li><a class="be" href="#"><i class="fa fa-dribbble" aria-hidden="true"></i> </a></li>
-</ul>  
+{% set social = social|default(site.globals.social) %} {# parameter #}
+{% set add_classes = add_classes|default('') %} {# parameter #}
+<div class="{{ [add_classes, 'w3-agileitsicons']|join(' ') }}">
+	<ul>
+		{% for network, account in social %}
+			{% set social_network = theme_config.social_networks[network] %}
+			<li><a href="{{ social_network.prepend }}{{ account }}"{{ social_network.class ? " class=\"#{ social_network.class }\"" }}><i class="fa fa-{{ network }}" aria-hidden="true"></i></a></li>
+		{% endfor %}
+	</ul>
+</div>

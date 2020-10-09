@@ -63,9 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header-top">
 		<!-- container -->
 		<div class="container">
-			<div class="social w3-agileitsicons">
-				{% include 'partials/social.html.twig' %}
-			</div>
+			{% include 'partials/social.html.twig' with {'add_classes': 'social'} %}
 			{% include 'partials/contacts.html.twig' %}
 			<div class="clearfix"> </div>
 		</div>
