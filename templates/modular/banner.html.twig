@@ -4,10 +4,6 @@
 	<div class="container">
 		<div class="banner-agileinfo">
 			{% do assets.addJs('theme://js/responsiveslides.min.js', 99) %}
-			{% set slide_settings = {} %}
-			{% for opt, val  in page.header.slides %}
-				{% set slide_settings = slide_settings|merge({ (opt): val}) %}
-			{% endfor %}
 			{% set inline_js %}
 				// You can also use "$(window).load(function() {"
 				$(function () {
@@ -25,7 +21,7 @@
 							$('.events').append("<li>after event fired.</li>");
 						}
 						};
-					$("#slider3").responsiveSlides(Object.assign(defaults, {{ slide_settings|json_encode() }}) );
+					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode() }}) );
 					});
 			{% endset %}
 			{% do assets.addInlineJs(inline_js, 99) %}
