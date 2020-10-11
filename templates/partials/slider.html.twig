@@ -12,13 +12,15 @@
 		</div>
 	</div>
 
+	{% set slider_options = page.header.slider.options|default({}) %}
+
 	{% set inline_js %}
-		var defaults = {
-			visibleItems: 4,
-			animationSpeed: 1000,
-			autoPlay: true,
-			autoPlaySpeed: 3000,
-			pauseOnHover:true,
+		var flexiselOptions = { {# this is a better approach to lock things off from admin GUI edits #}
+			visibleItems: {{ slider_options.visibleItems|default(4) }},
+			animationSpeed: {{ slider_options.animationSpeed|default(1000) }},
+			autoPlay: {{ slider_options.autoPlay|default('true') }},
+			autoPlaySpeed: {{ slider_options.autoPlaySpeed|default(3000) }},
+			pauseOnHover: {{ slider_options.pauseOnHover|default('true') }},
 			enableResponsiveBreakpoints: true,
 			responsiveBreakpoints: {
 				portrait: {
@@ -36,7 +38,7 @@
 			}
 			};
 		$(window).load(function() {
-			$("#flexiselDemo1").flexisel(Object.assign(defaults, {{ page.header.slider.options|default({})|json_encode() }}));
+			$("#flexiselDemo1").flexisel(flexiselOptions);
 			});
 	{% endset %}
 	{% do assets.addInlineJs(inline_js, 98) %}

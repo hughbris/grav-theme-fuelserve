@@ -3,8 +3,11 @@ title: Home
 # heading: Welcome # optional styled h2, defaults to 'Welcome' in template
 slider:
     options:
-        # autoPlay: false
-        # TODO: list defaults here if you can find them
+        # visibleItems: # default 4
+        # animationSpeed: # default 1000
+        # autoPlay: # default true
+        # autoPlaySpeed: # default 3000
+        # pauseOnHover: # default true
     items:
         -
             target: single.html
