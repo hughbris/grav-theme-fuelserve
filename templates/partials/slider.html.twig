@@ -3,12 +3,11 @@
 	<div class="arrival-grids wthree-grids">			 
 		<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner">
 			<ul id="flexiselDemo1">
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s1.jpg') }}" alt=""></a></li>
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s2.jpg') }}" alt=""></a></li>
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s3.jpg') }}" alt=""></a></li>
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s4.jpg') }}" alt=""></a></li>
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s1.jpg') }}" alt=""></a></li>
-				<li class="nbs-flexisel-item" style="width: 338.5px;"><a href="single.html"><img src="{{ url('theme://images/s2.jpg') }}" alt=""></a></li>
+			{% for item in page.header.slider.items %}
+				{% set alt = item.alt %} {# TODO: extend to check for meta file as fallback #}
+				{% set image = media["user://pages/#{item.image}"] %}
+				<li class="nbs-flexisel-item">{% if item.target %}<a href="{{ item.target }}">{% endif %}<img src="{{ image.forceResize(640,426).url }}" alt="{{ alt }}">{% if item.target %}</a>{% endif %}</li>
+			{% endfor %}
 			</ul>
 		</div>
 	</div>

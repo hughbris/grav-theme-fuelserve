@@ -5,6 +5,31 @@ slider:
     options:
         # autoPlay: false
         # TODO: list defaults here if you can find them
+    items:
+        -
+            target: single.html
+            image: images/slide1.jpg
+            # alt: Describe the picture or go home
+        -
+            target: single.html
+            image: images/slide2.jpg
+            # alt: Describe the picture or go home
+        -
+            target: single.html
+            image: images/slide3.jpg
+            # alt: Describe the picture or go home
+        -
+            target: single.html
+            image: images/slide4.jpg
+            # alt: Describe the picture or go home
+        -
+            target: single.html
+            image: images/slide1.jpg
+            # alt: Describe the picture or go home
+        -
+            target: single.html
+            image: images/slide2.jpg
+            # alt: Describe the picture or go home
 ---
 
 ##### Lorem ipsum dolor sit amet consectetur adipiscing elit.
