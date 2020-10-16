@@ -1,4 +1,6 @@
 ---
+title: Banner component
+# background: images # TODO
 brags:
     items: '@self.modular'
     order:
@@ -10,7 +12,7 @@ brags:
             - _brag3
 slides:
 #    timeout: 12000
-# options available in plugin I could implement
+# options available in plugin I could support
 #   auto: true,             // Boolean: Animate automatically, true or false
 #   speed: 500,            // Integer: Speed of the transition, in milliseconds
 #   timeout: 4000,          // Integer: Time between slide transitions, in milliseconds

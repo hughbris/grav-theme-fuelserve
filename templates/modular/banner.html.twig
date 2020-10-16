@@ -16,15 +16,23 @@
 						namespace: "callbacks",
 						before: function () {
 							$('.events').append("<li>before event fired.</li>");
-						},
+							},
 						after: function () {
 							$('.events').append("<li>after event fired.</li>");
-						}
+							}
 						};
 					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode() }}) );
 					});
 			{% endset %}
 			{% do assets.addInlineJs(inline_js, 99) %}
+			{% if page.header.background %}
+				{% set inline_css %}
+					.banner {
+						background-image: url({{ page.media.images['hero.jpg'].url }}); {# TODO: try pulling from frontmatter first #}
+					}
+				{% endset %}
+				{% do assets.addInlineCss(inline_css, 90) %}
+			{% endif %}
 			<div id="top" class="callbacks_container-wrap">
 				<ul class="rslides" id="slider3">
 				{% for m in page.collection('brags') %}
