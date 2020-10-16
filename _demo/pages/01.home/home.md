@@ -1,5 +1,6 @@
 ---
 title: Home
+# title_tag_override: Fuelserve: a pretty decent theme # optional, hardcodes complete document title element content, typically for homepages for search, sharing, and bookmarks
 # heading: Welcome # optional styled h2, defaults to 'Welcome' in template
 slider:
     options:

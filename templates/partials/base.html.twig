@@ -10,8 +10,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
 {% block head %}
     <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
-
+    <title>
+		{%- spaceless %}
+			{% if header.title_tag_override %}
+				{{ header.title_tag_override|e('html') }}
+			{% else %}
+				{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}
+			{% endif %}
+		{% endspaceless -%}
+	</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% include 'partials/metadata.html.twig' %}
