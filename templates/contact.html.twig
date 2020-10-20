@@ -9,22 +9,20 @@
 			<div class="contact-agileinfo">
 				<h2 class="agileits-title">{{ page.title }}</h2>
 				<!-- 728x90 -->
-
 			</div> 
 			<div class="agile-address">
 				<div class="col-md-4 address-grids">
 				{% set address = site.globals.contacts.address %}
 				{% if address is not empty %}
-					<h4>Address :</h4>
+					<h4>{{ page.header.column_labels.address|default('Address') }} :</h4>
 					<ul>
-						<li><p>{{ address|split(',')|map(a => a|trim())|join('<br>') }}</p>
-						</li>
+						<li><p>{{ address|split(',')|map(a => a|trim())|join('<br>') }}</p></li>
 					</ul>
 				{% endif %}
 				</div>
 				<div class="col-md-4 address-grids agileits">
 				{% set phones = site.globals.contacts.phone|default(['(+1) 000 123 456789']) %}
-				<h4>Phone :</h4>
+				<h4>{{ page.header.column_labels.phone|default('Phone') }} :</h4>
 				{% if phones is not iterable %}
 					{% set phones = [phones] %}
 				{% endif %}
@@ -33,7 +31,7 @@
 				{% endfor %} <!-- added tel hyperlink to phone number -->
 				</div>
 				<div class="col-md-4 address-grids">
-					<h4>Email :</h4>
+					<h4>{{ page.header.column_labels.phone|default('Email') }} :</h4>
 					<p><a href="mailto:{{ site.globals.contacts.email }}">{{ site.globals.contacts.email }}</a></p>
 				</div>
 				<div class="clearfix"> </div>
@@ -52,6 +50,5 @@
 	</div>
 	<!-- //contact -->
 	{% endblock content %}
-
 
 {% endblock %}

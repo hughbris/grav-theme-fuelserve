@@ -4,6 +4,9 @@ process:
   twig: true
 cache_enable: false
 
+# column_labels: # optional variant labels for the contact details columns
+#  address: Location
+
 forms: # TODO: test submitting the form
   contact:
     title: Contact form
