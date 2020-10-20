@@ -6,6 +6,7 @@
 				<a href="{{ p.url }}" class="dropdown-toggle hvr-bounce-to-bottom{{ is_active ? ' active' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 					{% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
 					{{ p.menu }}
+					<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
 					{{ _self.loop(p) }}
