@@ -1,6 +1,6 @@
 title: Fuel Serve
 author:
-  name: Fuel Serve
+  name: 'Fuel Serve ' # NB. the source template has a dumb space in the only place this is used so far, it's included here for faithful reproduction but you probably won't want it
   email: 'fuelserve@example.com'
 metadata:
     description: 'In a voice of pure fuel'

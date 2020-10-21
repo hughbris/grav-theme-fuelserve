@@ -27,7 +27,7 @@
 					<p class="number"><a href="tel:{{ phone|regex_replace(['~[\\s()-]~'], ['']) }}" class="tel">{{ phone }}</a></p> <!-- added hyperlink to telephone here -->
 				</div>
 				<div class="copyright">
-					<p>© 2017 Fuel Serve .  All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+					<p>© {{ 'now'|date('Y') }} {{ site.author.name }}.  All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p> <!-- removed space before full stop -->
 				</div>
 			</div>
 			<div class="clearfix"> </div>
