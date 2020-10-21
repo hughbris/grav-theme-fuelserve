@@ -22,4 +22,4 @@ These demo pages and corresponding templates are completed (most rough, some inc
 
 The [template design by w3layouts](https://w3layouts.com/fuel-serve-industrial-category-flat-bootstrap-responsive-web-template/), on which this theme is based, is licensed under the [Creative Commons Attribution 3.0 Unported license](https://creativecommons.org/licenses/by/3.0/).
 
-The underlying source code used here to port the theme to Grav CMS is licensed under the [MIT license](LICENSE.md).
+The underlying source code used here to port the theme to Grav CMS is licensed under the [MIT license](LICENSE).
