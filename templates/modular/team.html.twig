@@ -5,7 +5,7 @@
 		<h3>{{ page.title }}</h3>
 		<div class="team-wthreegrids">
 			{% for m in page.collection('members') %}
-				{{ m.content() }}
+				{{ m.content|raw }}
 			{% endfor %}
 			<div class="clearfix"> </div>
 		</div>

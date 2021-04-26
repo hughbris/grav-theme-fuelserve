@@ -23,7 +23,7 @@
 							<img src="{{ feature_image.url }}" alt="{{ feature_image.meta.alt_text|e('html_attr') }}" /> <!-- added populatable alt text here -->
 						</div>
 						<div class="col-md-6 about-w3grid">
-							{{ page.content }}
+							{{ page.content|raw }}
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -33,7 +33,7 @@
 			<!-- about-bottom -->
 			<!-- 728x90 -->
 			{% for m in page.collection %}
-				{{ m.content() }}
+				{{ m.content|raw }}
 			{% endfor %}
 
 		</div>

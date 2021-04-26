@@ -104,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% block body %}
 
 	{% block content %}
-		{{ page.content }}{# FIXME? #}
+		{{ page.content|raw }}{# FIXME? #}
 	{% endblock content %}
 
 {% endblock %}

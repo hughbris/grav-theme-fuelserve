@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="about-agileinfo">
                     <div class="col-md-12 about-w3grid">
-                        {{ page.content }}
+                        {{ page.content|raw }}
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -27,7 +27,7 @@
         <!-- default-bottom -->
         <!-- 728x90 -->
         {% for m in page.collection %}
-            {{ m.content() }}
+            {{ m.content|raw }}
         {% endfor %}
 
     </div>

@@ -36,7 +36,7 @@
 			<div id="top" class="callbacks_container-wrap">
 				<ul class="rslides" id="slider3">
 				{% for m in page.collection('brags') %}
-					{{ m.content() }}
+					{{ m.content|raw }}
 				{% endfor %}
 				</ul>
 			</div>

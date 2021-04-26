@@ -2,7 +2,7 @@
     <div class="banner-w3text">
         <h3>{{ page.title }}</h3>
         <h5>{{ header.bragline }}</h5>
-        {{ page.content() }}
+        {{ page.content|raw }}
         {% if header.cta %}
         <div class="banner-buttons">
             <div class="banner-button">

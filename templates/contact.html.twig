@@ -38,7 +38,7 @@
 			</div>
 			<!-- 728x90 -->
 			<div class="contact-agileinfom">
-				{{ page.content }}
+				{{ page.content|raw }}
 			</div>
 			<!-- 728x90 -->
 			{% set contact_form = forms('contact')|default(forms(0)) %}

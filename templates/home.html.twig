@@ -4,7 +4,7 @@
 	{% block banner %}
 		{% set banner = page.find('/home/_banner') %}
 		{% if banner %}
-			{{ banner.content() }}
+			{{ banner.content|raw }}
 		{% endif %}
 	{% endblock banner %}
 	
@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="welcome-info">
 					<h2 class="agileits-title">{{ page.header.heading|default('Welcome') }}</h2>
-					{{ page.content }}
+					{{ page.content|raw }}
 				</div>
 			</div>
 			<!-- //container -->
