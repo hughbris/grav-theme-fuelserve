@@ -16,7 +16,7 @@
 				{% if address is not empty %}
 					<h4>{{ page.header.column_labels.address|default('Address') }} :</h4>
 					<ul>
-						<li><p>{{ address|split(',')|map(a => a|trim())|join('<br>') }}</p></li>
+						<li><p>{{ address|split(',')|map(a => a|trim())|join('<br>')|raw }}</p></li>
 					</ul>
 				{% endif %}
 				</div>
