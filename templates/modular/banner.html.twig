@@ -21,7 +21,7 @@
 							$('.events').append("<li>after event fired.</li>");
 							}
 						};
-					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode() }}) );
+					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode()|raw }}) );
 					});
 			{% endset %}
 			{% do assets.addInlineJs(inline_js, 99) %}
