@@ -1,6 +1,7 @@
 {# TODO: WIP just shows login in menu and a popup login form that is not yet hooked into a login action; also (snippet at bottom) can show login status and logout link when user is authenticated #}
 {# WIP because I don't need this yet #}
 {% if config.plugins.login and config.plugins.login.enabled %}
+{# NB. this file is only included by the theme's default navigation template if theme_var('show_login') is set true #}
 <li class="login w3">
 	<div id="loginContainer"><a id="loginButton"><span>Login</span></a>
 		<div id="loginBox"> {# removed redundant inline style #}

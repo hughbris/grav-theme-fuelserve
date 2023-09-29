@@ -1,6 +1,7 @@
 enabled: true
 dropdown:
   enabled: true
+# show_login: true # only shows if login plugin is enabled
 
 social_networks: # FIXME: these aren't correct
   twitter:

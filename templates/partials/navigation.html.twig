@@ -56,7 +56,9 @@
 					</a>
 				</li>
 			{% endfor %}
-			{% include 'partials/navigation-login.html.twig' ignore missing %}
+			{% if theme_var('show_login', false) %}
+				{{ include('partials/navigation-login.html.twig', ignore_missing = true) }}
+			{% endif %}
 		</ul>
 		<div class="clearfix"> </div>
 	</div>
