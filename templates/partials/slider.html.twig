@@ -4,8 +4,8 @@
 		<div class="nbs-flexisel-container"><div class="nbs-flexisel-inner">
 			<ul id="flexiselDemo1">
 			{% for item in page.header.slider.items %}
-				{% set alt = item.alt %} {# TODO: extend to check for meta file as fallback #}
 				{% set image = page.media.images[item.image] %}
+				{% set alt = item.alt|default(image.meta.alt|default('')) %} {# NB. item.alt is currently unavailable in Admin front end blueprint because it could be confusing, image alt must be set in metafile manually or using admin-addon-media-metadata plugin #}
 				<li class="nbs-flexisel-item">{% if item.target %}<a href="{{ item.target }}">{% endif %}<img src="{{ image.cropZoom(640,426).url }}" alt="{{ alt }}">{% if item.target %}</a>{% endif %}</li>
 			{% endfor %}
 			</ul>
