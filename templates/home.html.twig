@@ -19,6 +19,9 @@
 			<div class="container">
 				<div class="welcome-info">
 					<h2 class="agileits-title">{{ page.header.heading|default('Welcome') }}</h2>
+					{% if page.header.subheading %}
+						<h5>{{ page.header.subheading }}</h5>
+					{% endif %}
 					{{ page.content|raw }}
 				</div>
 			</div>
