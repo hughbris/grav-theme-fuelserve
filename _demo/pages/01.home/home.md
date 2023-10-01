@@ -1,6 +1,6 @@
 ---
-title: Home
-# title_tag_override: Fuelserve: a pretty decent theme # optional, hardcodes complete document title element content, typically for homepages for search, sharing, and bookmarks
+menu: Home
+title: 'Fuelserve: a pretty decent theme'
 # heading: Welcome # optional styled h2, defaults to 'Welcome' in template
 slider:
     options:
@@ -12,27 +12,27 @@ slider:
     items:
         -
             target: single.html
-            image: images/slide1.jpg
+            image: slide1.jpg
             # alt: Describe the picture or go home
         -
             target: single.html
-            image: images/slide2.jpg
+            image: slide2.jpg
             # alt: Describe the picture or go home
         -
             target: single.html
-            image: images/slide3.jpg
+            image: slide3.jpg
             # alt: Describe the picture or go home
         -
             target: single.html
-            image: images/slide4.jpg
+            image: slide4.jpg
             # alt: Describe the picture or go home
         -
             target: single.html
-            image: images/slide1.jpg
+            image: slide1.jpg
             # alt: Describe the picture or go home
         -
             target: single.html
-            image: images/slide2.jpg
+            image: slide2.jpg
             # alt: Describe the picture or go home
 ---
 
