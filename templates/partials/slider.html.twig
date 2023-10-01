@@ -6,7 +6,7 @@
 			{% for item in page.header.slider.items %}
 				{% set alt = item.alt %} {# TODO: extend to check for meta file as fallback #}
 				{% set image = media["user://pages/#{item.image}"] %}
-				<li class="nbs-flexisel-item">{% if item.target %}<a href="{{ item.target }}">{% endif %}<img src="{{ image.forceResize(640,426).url }}" alt="{{ alt }}">{% if item.target %}</a>{% endif %}</li>
+				<li class="nbs-flexisel-item">{% if item.target %}<a href="{{ item.target }}">{% endif %}<img src="{{ image.cropZoom(640,426).url }}" alt="{{ alt }}">{% if item.target %}</a>{% endif %}</li>
 			{% endfor %}
 			</ul>
 		</div>
