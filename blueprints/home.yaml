@@ -1,0 +1,74 @@
+title: Homepage
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+
+      fields:
+        content:
+          fields:
+
+            header.heading:
+              type: text
+              label: Content blurb heading
+              default: Welcome
+              ordering@: header.title
+
+            header.subheading:
+              type: text
+              label: Optional blurb subheading
+              ordering@: header.heading
+
+        slider:
+          type: tab
+          title: Slider reel
+          ordering@: options
+
+          fields:
+
+            header.slider.options.autoPlay:
+              type: toggle
+              label: Auto play
+              # help
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
+            slider.tips:
+              type: display
+              content: "Upload and select Slider images from this page's Page Media under the Content tab.\n\nThe slide images you select will be **cropped** as required to fit a 3:2 width-to-height ratio, and also **scaled** automatically .\n\nTo avoid pixellation, their width should be at least **640 pixels**."
+              markdown: true
+              label: false
+              classes: tip
+
+            header.slider.items:
+              type: list
+              label: Slides
+              btnLabel: Add a slide
+              fields:
+
+                .target:
+                  type: pages
+                  label: Link to page
+                  show_all: false
+                  show_root: false
+
+                .image:
+                  type: pagemediaselect
+                  label: Slide image
+                  multiple: false
+                  validate: # TODO: or .. use the main image from the target page
+                    required: true
+
+                # this is currently unavailable in blueprint because it is ambiguous - set this in medium metafile manually or using plugin
+                # desired behaviour here: initial value defaults to alt text drawn from metafile when it exists
+                # .alt:
+                #   type: text
+                #   label: Image alternate text
+                #   # help:
