@@ -6,12 +6,12 @@
 
 {% block body %}
 	{% block banner %}
-		{% set banner = page.find('/home/_banner') %}
-		{% if banner %}
-			{{ banner.content|raw }}
+		{% set banner = page.header.banner %}
+		{% if page.header.banner %}
+			{{ include('partials/banner.html.twig', {banner: page.header.banner}) }}
 		{% endif %}
 	{% endblock banner %}
-	
+
 	{% block content %}
 		<!-- welcome -->
 		<div class="welcome">

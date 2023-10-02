@@ -3,8 +3,8 @@
 	<!-- container -->
 	<div class="container">
 		<div class="banner-agileinfo">
-			{% do assets.addJs('theme://js/responsiveslides.min.js', 99) %}
-			{% set inline_js %}
+			{% script 'theme://js/responsiveslides.min.js' priority: 99 %}
+			{% script priority: 99 %}
 				// You can also use "$(window).load(function() {"
 				$(function () {
 					// Slideshow 4
@@ -23,23 +23,38 @@
 						};
 					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode()|raw }}) );
 					});
-			{% endset %}
-			{% do assets.addInlineJs(inline_js, 99) %}
-			{% if page.header.background %}
-				{% set inline_css %}
+			{% endscript %}
+
+			{% set custom_background = banner.background ? page.media[banner.background] : page.media['hero.jpg'] %}
+			{% if custom_background %}
+				{% style %}
 					.banner {
-						background-image: url({{ page.media.images['hero.jpg'].url }}); {# TODO: try pulling from frontmatter first #}
+						background-image: url('{{ custom_background.url }}');
 					}
-				{% endset %}
-				{% do assets.addInlineCss(inline_css, 90) %}
+				{% endstyle %}
 			{% endif %}
+
 			<div id="top" class="callbacks_container-wrap">
 				<ul class="rslides" id="slider3">
-				{% for m in page.collection('brags') %}
-					{{ m.content|raw }}
+				{% for brag in banner.brags %}
+					<li>
+						<div class="banner-w3text">
+							<h3>{{ brag.title }}</h3>
+							<h5>{{ brag.bragline }}</h5>
+							{{ brag.copy|markdown() }}
+							{% if brag.cta %}
+							<div class="banner-buttons">
+								<div class="banner-button">
+									<a href="{{ brag.cta.target }}">{{ brag.cta.text|default('More') }}</a>
+								</div>
+							</div>
+							{% endif %}
+						</div>
+					</li>
 				{% endfor %}
 				</ul>
 			</div>
+
 		</div>
 	</div>
 	<!-- //container -->
