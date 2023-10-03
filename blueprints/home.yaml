@@ -22,10 +22,59 @@ form:
               label: Optional blurb subheading
               ordering@: header.heading
 
+        banner:
+          type: tab
+          title: Banner
+          ordering@: options
+
+          fields:
+
+            header.banner.background:
+              type: pagemediaselect
+              label: Custom background
+              multiple: false
+              # help
+
+            header.banner.brags:
+              type: list
+              label: Banner blurbs
+              btnLabel: Add a blurb
+              collapsed: true
+              fields:
+
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+
+                .bragline:
+                  type: text
+                  label: Subtitle
+                  validate:
+                    required: true
+
+                .cta.text:
+                  type: text
+                  label: Button text
+                  toggleable: true
+                  # help: "Defaults to 'More'"
+
+                .cta.target:
+                  type: pages
+                  label: Button link
+                  show_all: false
+                  show_root: false
+
+                .copy:
+                  type: markdown
+                  label: Spiel
+                  classes: brief
+
         slider:
           type: tab
           title: Slider reel
-          ordering@: options
+          ordering@: banner
 
           fields:
 
