@@ -1,3 +1,8 @@
+{% set pageSlideOptions = header_var('slides')|default({}) %}
+{# because seconds are better for the front end, this converts introduced 'seconds' property to milliseconds and (importantly) overrides any existing 'timeout' value #}
+{% if array_key_exists('seconds', pageSlideOptions) %}
+	{% set pageSlideOptions = pageSlideOptions|merge({'timeout': (pageSlideOptions.seconds * 1000)|int }) %}
+{% endif %}
 <!-- banner -->
 <div class="banner">
 	<!-- container -->
@@ -21,7 +26,7 @@
 							$('.events').append("<li>after event fired.</li>");
 							}
 						};
-					$("#slider3").responsiveSlides(Object.assign(defaults, {{ page.header.slides|default({})|json_encode()|raw }}) );
+					$("#slider3").responsiveSlides(Object.assign(defaults, {{ pageSlideOptions|default({})|json_encode()|raw }}) );
 					});
 			{% endscript %}
 

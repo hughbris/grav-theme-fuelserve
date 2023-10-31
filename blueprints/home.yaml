@@ -71,6 +71,23 @@ form:
                   label: Spiel
                   classes: brief
 
+            options: # TODO: move 'slides' header to beneath 'banner' in schema (not blueprint)
+              type: section
+              title: Options
+              fields:
+
+                header.slides.seconds: # note that the responsive slider expects duration in milliseconds through the 'timeout' property - if 'seconds' is set, it overrides
+                  type: number
+                  label: Duration
+                  help: "Duration of automatic slide progression, in seconds."
+                  toggleable: true
+                  validate:
+                    min: 0.5
+                    max: 60
+                    step: 0.1
+
+                # TODO: (#1) support other slider options: https://github.com/hughbris/grav-theme-fuelserve/issues/1
+
         slider:
           type: tab
           title: Slider reel
