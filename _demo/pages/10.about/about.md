@@ -9,6 +9,7 @@ content:
         custom:
             - _team
             - _advantages
+feature: 's7.jpg'
 ---
 
 ##### Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor.

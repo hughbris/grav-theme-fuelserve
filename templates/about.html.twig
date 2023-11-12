@@ -1,44 +1,7 @@
-{% extends 'partials/base.html.twig' %}
+{% extends 'default.html.twig' %}
 
-{% block body %}
-	
-	{% block content %}
-		<!-- about -->
-		<div class="about">
-			<div class="aboutw3-agileinfo">
-				<!-- container -->
-				<div class="container">
-					<h2 class="agileits-title">{{ page.title }}</h2>
-					<!-- 728x90 -->
-				</div>
-				<!-- //container -->
-			</div>
-			<!-- about-bottom -->
-			<div class="about-bottom">
-				<!-- container -->
-				<div class="container">
-					<div class="about-agileinfo">
-						<div class="col-md-6 about-w3grid">
-							{% set feature_image = page.media|first %}
-							<img src="{{ feature_image.url }}" alt="{{ feature_image.meta.alt_text|e('html_attr') }}" /> <!-- added populatable alt text here -->
-						</div>
-						<div class="col-md-6 about-w3grid">
-							{{ page.content|raw }}
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- // container -->
-			</div>
-			<!-- about-bottom -->
-			<!-- 728x90 -->
-			{% for m in page.collection %}
-				{{ m.content|raw }}
-			{% endfor %}
-
-		</div>
-		<!-- //about -->
-	{% endblock content %}
-
-
+{% block content_container %}
+	<div class="about-agileinfo">
+		{{ parent() }}
+	</div>
 {% endblock %}

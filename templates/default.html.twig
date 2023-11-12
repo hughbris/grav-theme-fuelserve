@@ -2,7 +2,7 @@
 
 {% block content %}
     <!-- default -->
-    <div class="content">
+    <div class="content {{ page.template }}">
         <div class="aboutw3-agileinfo">
             <!-- container -->
             <div class="container">
@@ -11,16 +11,22 @@
             </div>
             <!-- //container -->
         </div>
-        <!-- about-bottom -->
-        <div class="about-bottom">
+        <!-- {{ page.template }}-bottom -->
+        <div class="{{ page.template }}-bottom">
             <!-- container -->
             <div class="container">
-                <div class="about-agileinfo">
-                    <div class="col-md-12 about-w3grid">
+                {% block content_container %}
+                    {% set feature_image = page.media[page.header.feature] %}
+                    {% if feature_image %}
+                    <div class="col-md-6 {{ page.template }}-w3grid">
+                        <img src="{{ feature_image.url }}" class="feature img-thumbnail" alt="{{ feature_image.meta.alt|default('')|e('html_attr') }}" /> <!-- added class and populatable @alt text here -->
+                    </div>
+                    {% endif %}
+                    <div class="col-md-{{ feature_image ? '6' : '12' }} {{ page.template }}-w3grid">
                         {{ page.content|raw }}
                     </div>
-                    <div class="clearfix"> </div>
-                </div>
+                {% endblock %}
+                <div class="clearfix"> </div>
             </div>
             <!-- // container -->
         </div>
