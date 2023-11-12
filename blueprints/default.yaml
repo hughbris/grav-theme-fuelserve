@@ -1,0 +1,14 @@
+title: default
+extends@: parent@
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.feature:
+              type: pagemediaselect
+              label: Feature Image
+              multiple: false
+              ordering@: content
