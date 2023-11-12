@@ -10,6 +10,8 @@ form:
       fields:
         content:
           fields:
+            header.feature:
+              unset@: true
 
             header.heading:
               type: text
