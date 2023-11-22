@@ -38,7 +38,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 {% block javascripts %}
 	<!-- js -->
-    {% do assets.addJs('theme://js/jquery-1.11.1.min.js', 100) %}
+    {% do assets.addJs('theme://js/jquery-3.7.1.min.js', 100) %}
+	{# CDN:
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+		???
+		{% script 'https://code.jquery.com/jquery-3.7.1.min.js' with {integrity: 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=', crossorigin: 'anonymous'} %}
+	#}
     {% do assets.addJs('theme://js/bootstrap.js', 100) %}
 	{% set inline_js %}
 	jQuery(document).ready(function($) {
