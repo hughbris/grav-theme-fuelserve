@@ -46,7 +46,9 @@
 						<div class="banner-w3text">
 							<h3>{{ brag.title }}</h3>
 							<h5>{{ brag.bragline }}</h5>
-							{{ brag.copy|markdown() }}
+							<div class="brag">
+								{{ brag.copy|trim|markdown() }}
+							</div>
 							{% if brag.cta %}
 							<div class="banner-buttons">
 								<div class="banner-button">
