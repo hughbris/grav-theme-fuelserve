@@ -97,6 +97,17 @@ form:
 
           fields:
 
+            header.slider.enabled:
+              type: toggle
+              label: Enable slider
+              help: Show the homepage slider
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
             header.slider.options.autoPlay:
               type: toggle
               label: Auto play

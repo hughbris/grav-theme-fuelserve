@@ -32,7 +32,9 @@
 	{% endblock content %}
 
 	{% block slider %}
-		{% include 'partials/slider.html.twig' ignore missing %}
+		{% if header_var(slider.enabled)|defined(true) %}
+			{% include 'partials/slider.html.twig' ignore missing %}
+		{% endif %}
 	{% endblock slider %}
 
 	{% block newsfeed %}
