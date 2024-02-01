@@ -19,8 +19,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
-    <link rel="canonical" href="{{ page.url(true, true) }}" />
+	{% block links %}
+        <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+        <link rel="canonical" href="{{ page.url(true, true) }}" />
+	{% endblock %}
 {% endblock head %}
 
 {% block stylesheets %}
@@ -58,6 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% endblock %}
 
 {% block assets deferred %}
+    {{ assets.link()|raw }}
     {{ assets.css()|raw }}
     {{ assets.js()|raw }}
 {% endblock %}
